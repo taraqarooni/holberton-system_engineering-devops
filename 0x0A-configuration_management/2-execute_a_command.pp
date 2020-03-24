@@ -1,5 +1,5 @@
 # pkill
 exec {'killmenow':
-  command   => 'usr/bin/pkill -f killmenow',
-  provider  => 'shell'
+  provider  => 'shell',
+  command   => 'usr/bin/pkill -f killmenow'
 }
