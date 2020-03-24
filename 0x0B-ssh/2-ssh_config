@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-# Creates RSA pair of keys
-ssh-keygen -b 4096 -f holberton -N betty
+# SSH config
+Hosts ubuntu
+PasswordAuthentication no
+IdentityFile ~/.ssh/holberton
