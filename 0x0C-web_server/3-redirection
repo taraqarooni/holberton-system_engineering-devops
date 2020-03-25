@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#redirect 
+apt-get -y update
+apt-get -y install nginx
+sed -i "30i \\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4;" /etc/nginx/sites-available/default
+service nginx restart
