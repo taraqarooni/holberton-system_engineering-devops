@@ -14,4 +14,4 @@ printf %s "server {
     }
 }" > /etc/nginx/sites-available/default
 sudo /etc/init.d/nginx restart
-© 2020 GitHub, Inc.
+
