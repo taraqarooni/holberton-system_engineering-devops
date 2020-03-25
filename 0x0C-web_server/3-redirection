@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-#redirectme
-apt-get -y update
-apt-get -y install nginx
+# Install nginx
+sudo apt update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 sed -i "30i \\\trewrite ^/redirect_me  https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
 sudo /etc/init.d/nginx start
