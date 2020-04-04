@@ -1,22 +1,17 @@
 #!/usr/bin/env bash
-# 404 error
-sudo apt-get update
-sudo apt-get -y install nginx
-sudo ufw allow http
-echo "Holberton School" > /var/www/html/index.html
-echo "Ceci n'est pas une page" > /var/www/html/404.html
-printf %s "server {
-    listen 80;
-    listen [::]:80 default_server;
-    root   /var/www/html;
-    index index.html index.htm index.nginx-debian.html;
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-    }
-    error_page 404 /404.html;
-    location = /404.html {
-        internal;
-    }
-    add_header X-Served-By $HOSTNAME;
-}" > /etc/nginx/sites-available/default
-sudo /etc/init.d/nginx restart
+# Install the load balanecer on lb-01 server
+
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+sudo echo "ENABLED=1" >> /etc/default/haproxy
+sudo echo "
+frontend front
+	bind *:80
+	mode http
+	default_backend webservers
+backend webservers
+    balance roundrobin
+    server 1205-web-01  104.196.193.253:80 check
+    server 1205-web-02  54.221.57.153:80 check
+" >> /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
