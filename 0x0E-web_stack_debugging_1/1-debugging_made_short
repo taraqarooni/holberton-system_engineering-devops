@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
-<<<<<<< HEAD
 # Installing new server to serve content
 ./0-nginx_likes_port_80
-echo "hi" > /var/run/nginx.pid
-echo "hi" > /run/nginx.pid
-=======
-# listen to port 80 no 8080
-sudo sed -i 's/8080/80/g'  /etc/nginx/sites-enabled/default
-sudo service nginx restart
->>>>>>> 06a1d6a8c6d2fb621cc756d45e31cc26f4df0f91
+echo "hello world" > /var/run/nginx.pid
+echo "hello world" > /run/nginx.pid
