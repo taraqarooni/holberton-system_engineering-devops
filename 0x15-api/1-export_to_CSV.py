@@ -13,7 +13,6 @@ if __name__ == "__main__":
     reqTodos = requests.get(url + sys.argv[1] + '/todos/')
     jsonemp = reqEmployee.json()
     filename = str(jsonemp.get('id')) + ".csv"
-    
     with open(filename, 'w') as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=",",
                                quotechar='"', quoting=csv.QUOTE_ALL)
