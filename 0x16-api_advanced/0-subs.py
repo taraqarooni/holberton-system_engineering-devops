@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""subscribers"""
 import requests
 
 
@@ -17,4 +18,3 @@ def number_of_subscribers(subreddit):
     else:
         stre.close()
         return 0
-    
