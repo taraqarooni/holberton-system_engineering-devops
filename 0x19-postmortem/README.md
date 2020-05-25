@@ -16,7 +16,8 @@ From 1:50 p.m to May 21 9:30 am check and validate every process associated to a
 * May 21 9:30 am: Error fixed and requests responded 200
 
 ### Root Cause and Resolution 
-The root of the problem was due to an incorrect file name in the last update of the site, specifically in the extension of the updated php module
+The root of the problem was due to an incorrect file name in the last update of the site, specifically in the extension of the updated php module.
+
 Initially it was verified that the files were in the appropriate apache path “sites / available”, with the `ps aux` command the processes associated with apache were verified, then with the `strace` command the returns were checked the file was identified, a script was generated to correct the problem, it was validated with the `curl` command and access from the browser.
 
 ### Corrective and Preventative Measures
